@@ -2,7 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* styles.css */
+@keyframes fadeInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-top {
+  animation: fadeInFromLeft 1.2s ease-out;
+}
+
+@keyframes fadeInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-right {
+  animation: fadeInFromRight 1.2s ease-out;
+}
+
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -30,4 +62,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
