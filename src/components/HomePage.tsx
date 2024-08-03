@@ -49,7 +49,7 @@ const HomePage = () => {
         </span>
         <div className="flex items-center justify-between w-[40vw] text-xl font-light">
           <span
-            className="hover:underline cursor-pointer"
+            className="hover:border-b-2 cursor-pointer hover:pb-1 transition-all duration-300"
             onClick={() => {
               scrollToTop();
             }}
@@ -65,7 +65,7 @@ const HomePage = () => {
             About
           </span> */}
           <span
-            className="hover:underline cursor-pointer"
+            className="hover:border-b-2 cursor-pointer hover:pb-1 transition-all duration-300"
             onClick={() => {
               handleScroll(expRef);
             }}
@@ -74,7 +74,7 @@ const HomePage = () => {
           </span>
 
           <span
-            className="hover:underline cursor-pointer"
+            className="hover:border-b-2 cursor-pointer hover:pb-1 transition-all duration-300"
             onClick={() => {
               handleScroll(skillRef);
             }}
@@ -82,7 +82,7 @@ const HomePage = () => {
             Skills
           </span>
           <span
-            className="hover:underline cursor-pointer"
+            className="hover:border-b-2 cursor-pointer hover:pb-1 transition-all duration-300"
             onClick={() => {
               handleScroll(projRef);
             }}
@@ -90,7 +90,7 @@ const HomePage = () => {
             Projects
           </span>
           <span
-            className="hover:underline cursor-pointer"
+            className="hover:border-b-2 cursor-pointer hover:pb-1 transition-all duration-300"
             onClick={() => {
               handleScroll(eduRef);
             }}
