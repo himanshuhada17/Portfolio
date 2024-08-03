@@ -44,8 +44,8 @@ const HomePage = () => {
         }  backdrop-blur-md  px-4 h-20 shadow-md fixed top-0`}
       >
         <span className="text-xl font-thin flex items-center">
-          <span className="font-normal">Himanshu Hada</span> <span className="sm:block hidden"> - Frontend
-          Developer</span>
+          <span className="font-normal">Himanshu Hada</span>{" "}
+          <span className="sm:block hidden"> - Frontend Developer</span>
         </span>
         <div className="sm:flex  hidden items-center justify-between w-[40vw] text-xl font-light">
           <span
@@ -207,7 +207,7 @@ const HomePage = () => {
               Download Resume
               <FaFilePdf />
             </button>
-          </div> 
+          </div>
           {/* //Third Section */}
           <div className="w-full space-y-11 fade-in-right1" ref={expRef}>
             <div className="flex items-center w-full overflow-hidden">
