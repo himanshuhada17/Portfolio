@@ -43,11 +43,11 @@ const HomePage = () => {
           toggleTheme ? "bg-black/40 black-theme" : "bg-white/40"
         }  backdrop-blur-md  px-4 h-20 shadow-md fixed top-0`}
       >
-        <span className="text-xl font-thin">
-          <span className="font-normal">Himanshu Hada</span> - Frontend
-          Developer
+        <span className="text-xl font-thin flex items-center">
+          <span className="font-normal">Himanshu Hada</span> <span className="sm:block hidden"> - Frontend
+          Developer</span>
         </span>
-        <div className="flex items-center justify-between w-[40vw] text-xl font-light">
+        <div className="sm:flex  hidden items-center justify-between w-[40vw] text-xl font-light">
           <span
             className="hover:border-b-2 cursor-pointer hover:pb-1 transition-all duration-300"
             onClick={() => {
@@ -98,25 +98,25 @@ const HomePage = () => {
             Education
           </span>
         </div>
-        <div className="flex w-[13vw] items-center justify-evenly h-fit">
+        <div className="flex w-[46vw] sm:w-[13vw] items-center justify-evenly h-fit">
           <Link href="https://www.instagram.com/">
             <FaInstagram
-              size={30}
-              className="text-amber-800 transition-all duration-300 hover:scale-110 cursor-pointer"
+              // size={30}
+              className="text-amber-800 text-2xl transition-all duration-300 hover:scale-110 cursor-pointer"
             />
           </Link>
           <Link href="https://www.linkedin.com/feed/" target="_blank">
             <FaLinkedinIn
-              size={30}
-              className="text-blue-500 transition-all duration-300 hover:scale-110 cursor-pointer"
+              // size={30}
+              className="text-blue-500 text-2xl transition-all duration-300 hover:scale-110 cursor-pointer"
             />
           </Link>
           {/* <CiFacebook size={30} /> */}
           {/* <FaPhoneAlt size={22} /> */}
           <Link href="mailto:himanshuhada17@gmail.com">
             <SiGmail
-              size={22}
-              className="text-red-500 transition-all duration-300 hover:scale-110 cursor-pointer"
+              // size={22}
+              className="text-red-500 text-xl transition-all duration-300 hover:scale-110 cursor-pointer"
             />
           </Link>
           <button
@@ -132,14 +132,28 @@ const HomePage = () => {
           toggleTheme ? "black-background" : null
         }  transition-all duration-300`}
       >
-        <div className="w-[60vw] space-y-12 ">
+        <div className="w-[90vw] sm:w-[60vw] space-y-12 ">
           {/* //First Section */}
           <div
-            className="w-full flex justify-between mt-7 fade-in-right"
+            className="w-full sm:flex  sm:justify-between mt-7 fade-in-right"
             ref={aboutRef}
           >
-            <div className="w-[55%] space-y-5 ">
-              <span className="text-5xl font-bold">A little bit about me</span>
+            <div className="sm:w-[55%] space-y-5 ">
+              <div className="w-full gap-5 flex sm:hidden">
+                <Image
+                  src={photo}
+                  alt={""}
+                  height={130}
+                  width={130}
+                  className="object-contain rounded-3xl h-fit"
+                />
+                <span className="text-5xl font-bold">
+                  A little bit about me
+                </span>
+              </div>
+              <span className="text-5xl font-bold sm:block hidden">
+                A little bit about me
+              </span>
               <p className="leading-relaxed">
                 As a Frontend Developer for MedicalEshop, I developed and
                 maintained the ecommerce site's frontend using{" "}
@@ -160,7 +174,7 @@ const HomePage = () => {
                 experience.
               </p>
             </div>
-            <div className="w-[45%] flex justify-end h-full">
+            <div className="w-[45%]  hidden sm:flex justify-end h-full">
               <Image
                 src={photo}
                 alt={""}
@@ -197,7 +211,7 @@ const HomePage = () => {
           {/* //Third Section */}
           <div className="w-full space-y-11 fade-in-right1" ref={expRef}>
             <div className="flex items-center w-full overflow-hidden">
-              <div className="text-5xl font-bold">Experience</div>
+              <div className="text-3xl sm:text-5xl font-bold">Experience</div>
               {/* <Divider className="ml-4 w-fit" /> */}
               <div
                 className={`ml-4 w-fit h-[1px] mt-2 ${
@@ -254,7 +268,7 @@ const HomePage = () => {
           {/* Fourth section */}
           <div className="w-full space-y-11 fade-in-right2" ref={skillRef}>
             <div className="flex items-center w-full overflow-hidden">
-              <div className="text-5xl font-bold">Skills</div>
+              <div className="text-3xl sm:text-5xl font-bold">Skills</div>
               {/* <Divider className="ml-4 w-fit" /> */}
               <div
                 className={`ml-4 w-fit h-[1px] mt-2 ${
@@ -266,7 +280,7 @@ const HomePage = () => {
           {/* Fifth Section */}
           <div className="w-full space-y-11 fade-in-right3" ref={projRef}>
             <div className="flex items-center w-full overflow-hidden">
-              <div className="text-5xl font-bold">Projects</div>
+              <div className="text-3xl sm:text-5xl font-bold">Projects</div>
               {/* <Divider className="ml-4 w-fit" /> */}
               {/* <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div> */}
               <div
@@ -279,7 +293,7 @@ const HomePage = () => {
           {/* Sixth Section */}
           <div className="w-full space-y-11 fade-in-right3" ref={eduRef}>
             <div className="flex items-center w-full overflow-hidden">
-              <div className="text-5xl font-bold">Education</div>
+              <div className="text-3xl sm:text-5xl font-bold">Education</div>
               {/* <Divider className="ml-4 w-fit" /> */}
               {/* <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div> */}
               <div
