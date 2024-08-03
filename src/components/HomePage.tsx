@@ -1,13 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
+import { LuSun } from "react-icons/lu";
 import { SiGmail } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
 import photo from "../../public/images/IMG_1117 2.jpg";
 import { FaFilePdf } from "react-icons/fa6";
+import { FiMoon } from "react-icons/fi";
 import { Divider } from "antd";
 import tdclogo from "../../public/images/the_developer_company_logo.jpg";
 import centralAcademy from "../../public/images/central_academy.png";
@@ -20,6 +22,7 @@ const HomePage = () => {
   const projRef = useRef(null);
   const skillRef = useRef(null);
   const eduRef = useRef(null);
+  const [toggleTheme, setToggleTheme] = useState(false);
 
   const handleScroll = (ref: any) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
@@ -29,9 +32,17 @@ const HomePage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleToggle = () => {
+    setToggleTheme((prev) => !prev);
+  };
+
   return (
     <>
-      <div className="w-full flex items-center justify-between bg-white/40 backdrop-blur-md  px-4 h-20 shadow-md fixed top-0">
+      <div
+        className={`w-full flex items-center justify-between  ${
+          toggleTheme ? "bg-black/40 black-theme" : "bg-white/40"
+        }  backdrop-blur-md  px-4 h-20 shadow-md fixed top-0`}
+      >
         <span className="text-xl font-thin">
           <span className="font-normal">Himanshu Hada</span> - Frontend
           Developer
@@ -108,9 +119,19 @@ const HomePage = () => {
               className="text-red-500 transition-all duration-300 hover:scale-110 cursor-pointer"
             />
           </Link>
+          <button
+            className="border-[1px] p-2 rounded-full hover:text-blue-500 hover:border-blue-500 transition-all duration-300"
+            onClick={handleToggle}
+          >
+            {toggleTheme ? <FiMoon /> : <LuSun />}
+          </button>
         </div>
       </div>
-      <div className="mt-20 pb-28  w-full flex justify-center ">
+      <div
+        className={`pt-20 pb-28  w-full flex justify-center ${
+          toggleTheme ? "black-background" : null
+        }  transition-all duration-300`}
+      >
         <div className="w-[60vw] space-y-12 ">
           {/* //First Section */}
           <div
@@ -178,7 +199,11 @@ const HomePage = () => {
             <div className="flex items-center w-full overflow-hidden">
               <div className="text-5xl font-bold">Experience</div>
               {/* <Divider className="ml-4 w-fit" /> */}
-              <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div>
+              <div
+                className={`ml-4 w-fit h-[1px] mt-2 ${
+                  toggleTheme ? "bg-gray-700" : "bg-gray-200"
+                }  flex-grow`}
+              ></div>
             </div>
             <div className="w-full flex gap-4">
               <Image
@@ -231,7 +256,11 @@ const HomePage = () => {
             <div className="flex items-center w-full overflow-hidden">
               <div className="text-5xl font-bold">Skills</div>
               {/* <Divider className="ml-4 w-fit" /> */}
-              <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div>
+              <div
+                className={`ml-4 w-fit h-[1px] mt-2 ${
+                  toggleTheme ? "bg-gray-700" : "bg-gray-200"
+                }  flex-grow`}
+              ></div>
             </div>
           </div>
           {/* Fifth Section */}
@@ -239,7 +268,12 @@ const HomePage = () => {
             <div className="flex items-center w-full overflow-hidden">
               <div className="text-5xl font-bold">Projects</div>
               {/* <Divider className="ml-4 w-fit" /> */}
-              <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div>
+              {/* <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div> */}
+              <div
+                className={`ml-4 w-fit h-[1px] mt-2 ${
+                  toggleTheme ? "bg-gray-700" : "bg-gray-200"
+                }  flex-grow`}
+              ></div>
             </div>
           </div>
           {/* Sixth Section */}
@@ -247,10 +281,21 @@ const HomePage = () => {
             <div className="flex items-center w-full overflow-hidden">
               <div className="text-5xl font-bold">Education</div>
               {/* <Divider className="ml-4 w-fit" /> */}
-              <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div>
+              {/* <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div> */}
+              <div
+                className={`ml-4 w-fit h-[1px] mt-2 ${
+                  toggleTheme ? "bg-gray-700" : "bg-gray-200"
+                }  flex-grow`}
+              ></div>
             </div>
             <div className="space-y-8">
-              <div className="text-xl font-light border-l-8 border-gray-200 bg-gradient-to-r from-gray-100 to-white pl-3 w-fit">
+              <div
+                className={`text-xl font-light border-l-8  ${
+                  !toggleTheme
+                    ? "bg-gradient-to-r from-gray-100 to-white border-gray-200"
+                    : " border-gray-800"
+                }  pl-3 w-fit`}
+              >
                 GRADUATION
               </div>
               <div className="w-full flex gap-4">
@@ -273,7 +318,13 @@ const HomePage = () => {
               </div>
             </div>
             <div className="space-y-8">
-              <div className="text-xl font-light border-l-8 border-gray-200 bg-gradient-to-r from-gray-100 to-white pl-3 w-fit">
+              <div
+                className={`text-xl font-light border-l-8  ${
+                  !toggleTheme
+                    ? "bg-gradient-to-r from-gray-100 to-white border-gray-200"
+                    : " border-gray-800"
+                }  pl-3 w-fit`}
+              >
                 SENIOR SECONDARY EDUCATION
               </div>
               <div className="w-full flex gap-4">
@@ -298,7 +349,13 @@ const HomePage = () => {
               </div>
             </div>
             <div className="space-y-8">
-              <div className="text-xl font-light border-l-8 border-gray-200 bg-gradient-to-r from-gray-100 to-white pl-3 w-fit">
+              <div
+                className={`text-xl font-light border-l-8  ${
+                  !toggleTheme
+                    ? "bg-gradient-to-r from-gray-100 to-white border-gray-200"
+                    : " border-gray-800"
+                }  pl-3 w-fit`}
+              >
                 SECONDARY EDUCATION
               </div>
               <div className="w-full flex gap-4">
