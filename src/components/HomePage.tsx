@@ -189,7 +189,7 @@ const HomePage = () => {
             <button className="text-white bg-black rounded-2xl p-2">Download</button>
           </div> */}
           {/* //Second Section */}
-          {/* <div className="fade-in-right">
+          <div className="fade-in-right">
             <button
               className="text-white text-lg bg-black rounded-2xl p-3 px-3 flex items-center gap-2"
               onClick={() => {
@@ -207,7 +207,7 @@ const HomePage = () => {
               Download Resume
               <FaFilePdf />
             </button>
-          </div> */}
+          </div> 
           {/* //Third Section */}
           <div className="w-full space-y-11 fade-in-right1" ref={expRef}>
             <div className="flex items-center w-full overflow-hidden">
