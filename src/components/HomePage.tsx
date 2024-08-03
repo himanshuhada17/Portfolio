@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
@@ -8,9 +8,24 @@ import Link from "next/link";
 import Image from "next/image";
 import photo from "../../public/images/IMG_1117 2.jpg";
 import { FaFilePdf } from "react-icons/fa6";
-
+import { Divider } from "antd";
+import tdclogo from "../../public/images/the_developer_company_logo.jpg";
 
 const HomePage = () => {
+  const expRef = useRef(null);
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projRef = useRef(null);
+  const skillRef = useRef(null);
+
+  const handleScroll = (ref: any) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <div className="w-full flex items-center justify-between bg-white px-4 h-20 shadow-md fixed top-0">
@@ -18,11 +33,47 @@ const HomePage = () => {
           <span className="font-normal">Himanshu Hada</span> - Frontend
           Developer
         </span>
-        <div className="flex items-center justify-between w-96 text-xl font-light">
-          <span className="hover:underline cursor-pointer">Home</span>
-          <span className="hover:underline cursor-pointer">About</span>
-          <span className="hover:underline cursor-pointer">Projects</span>
-          <span className="hover:underline cursor-pointer">Skills</span>
+        <div className="flex items-center justify-between w-[40vw] text-xl font-light">
+          <span
+            className="hover:underline cursor-pointer"
+            onClick={() => {
+              scrollToTop();
+            }}
+          >
+            Home
+          </span>
+          <span
+            className="hover:underline cursor-pointer"
+            onClick={() => {
+              handleScroll(aboutRef);
+            }}
+          >
+            About
+          </span>
+          <span
+            className="hover:underline cursor-pointer"
+            onClick={() => {
+              handleScroll(expRef);
+            }}
+          >
+            Experience
+          </span>
+          <span
+            className="hover:underline cursor-pointer"
+            onClick={() => {
+              handleScroll(projRef);
+            }}
+          >
+            Projects
+          </span>
+          <span
+            className="hover:underline cursor-pointer"
+            onClick={() => {
+              handleScroll(skillRef);
+            }}
+          >
+            Skills
+          </span>
         </div>
         <div className="flex w-[13vw] items-center justify-evenly h-fit">
           <Link href="https://www.instagram.com/">
@@ -47,10 +98,11 @@ const HomePage = () => {
           </Link>
         </div>
       </div>
-      <div className="mt-20 h-screen w-full flex justify-center">
-        <div className="w-[60vw] space-y-12">
-          <div className="w-full flex justify-between mt-7">
-            <div className="w-[55%] space-y-5 fade-in-top">
+      <div className="mt-20 pb-28  w-full flex justify-center ">
+        <div className="w-[60vw] space-y-12 ">
+          {/* //First Section */}
+          <div className="w-full flex justify-between mt-7 fade-in-top" ref={homeRef}>
+            <div className="w-[55%] space-y-5 ">
               <span className="text-5xl font-bold">A little bit about me</span>
               <p className="leading-relaxed">
                 As a Frontend Developer for MedicalEshop, I developed and
@@ -78,7 +130,7 @@ const HomePage = () => {
                 alt={""}
                 height={300}
                 width={300}
-                className="object-contain rounded-3xl fade-in-right"
+                className="object-contain rounded-3xl"
               />
             </div>
           </div>
@@ -86,7 +138,8 @@ const HomePage = () => {
             <span className="text-sm font-light">Download My Resume!</span>
             <button className="text-white bg-black rounded-2xl p-2">Download</button>
           </div> */}
-          <div className="">
+          {/* //Second Section */}
+          {/* <div className="fade-in-top">
             <button
               className="text-white text-lg bg-black rounded-2xl p-3 px-3 flex items-center gap-2"
               onClick={() => {
@@ -102,8 +155,61 @@ const HomePage = () => {
               }}
             >
               Download Resume
-              <FaFilePdf/>
+              <FaFilePdf />
             </button>
+          </div> */}
+          {/* //Third Section */}
+          <div className="w-full space-y-11 fade-in-top" ref={expRef}>
+            <div className="flex items-center w-full overflow-hidden">
+              <div className="text-5xl font-bold">Experience</div>
+              {/* <Divider className="ml-4 w-fit" /> */}
+              <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div>
+            </div>
+            <div className="w-full flex gap-4">
+              <Image
+                src={tdclogo}
+                alt=""
+                height={75}
+                width={75}
+                className="rounded-lg"
+              />
+              <div className="">
+                <div className="font-semibold">TDC Consultancy Pvt. Ltd.</div>
+                <div className="font-light">1 yr</div>
+                <div className="text-gray-500 font-normal">
+                  Udaipur, Rajasthan, India • On-Site
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="flex w-full items-center">
+                <div className="flex flex-col items-center ml-4">
+                  <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                  <div className="w-[1px] h-20 bg-gray-300 my-3"></div>
+                  <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                </div>
+                <div className="ml-8 space-y-8">
+                  <div>
+                    <div className="font-semibold">
+                      Software Developer Engineer
+                    </div>
+                    <div className="font-light">Full-time</div>
+                    <div className="text-gray-500  font-light">
+                      March 2024 - July 2024 • 5 mos
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-semibold">
+                      Software Developer Intern
+                    </div>
+                    <div className="font-light">Internship</div>
+                    <div className="text-gray-500 font-light">
+                      Sep 2023 - Feb 2024 • 6 mos
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
