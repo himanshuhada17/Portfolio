@@ -30,7 +30,18 @@
 }
 
 .fade-in-right {
-  animation: fadeInFromRight 1.2s ease-out;
+  animation: fadeInFromRight 0.6s ease-out;
+}
+
+.fade-in-right1 {
+  animation: fadeInFromRight 0.9s ease-out;
+}
+
+.fade-in-right2 {
+  animation: fadeInFromRight 0.9s ease-out;
+}
+.fade-in-right3 {
+  animation: fadeInFromRight 0.9s ease-out;
 }
 
 

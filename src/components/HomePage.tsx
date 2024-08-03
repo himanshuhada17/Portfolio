@@ -10,13 +10,16 @@ import photo from "../../public/images/IMG_1117 2.jpg";
 import { FaFilePdf } from "react-icons/fa6";
 import { Divider } from "antd";
 import tdclogo from "../../public/images/the_developer_company_logo.jpg";
+import centralAcademy from "../../public/images/central_academy.png";
+import mmps from "../../public/images/mmps.png";
+import techno from "../../public/images/techno.jpg";
 
 const HomePage = () => {
   const expRef = useRef(null);
-  const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const projRef = useRef(null);
   const skillRef = useRef(null);
+  const eduRef = useRef(null);
 
   const handleScroll = (ref: any) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
@@ -28,7 +31,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="w-full flex items-center justify-between bg-white px-4 h-20 shadow-md fixed top-0">
+      <div className="w-full flex items-center justify-between bg-white/40 backdrop-blur-md  px-4 h-20 shadow-md fixed top-0">
         <span className="text-xl font-thin">
           <span className="font-normal">Himanshu Hada</span> - Frontend
           Developer
@@ -40,16 +43,16 @@ const HomePage = () => {
               scrollToTop();
             }}
           >
-            Home
+            About
           </span>
-          <span
+          {/* <span
             className="hover:underline cursor-pointer"
             onClick={() => {
               handleScroll(aboutRef);
             }}
           >
             About
-          </span>
+          </span> */}
           <span
             className="hover:underline cursor-pointer"
             onClick={() => {
@@ -57,6 +60,15 @@ const HomePage = () => {
             }}
           >
             Experience
+          </span>
+
+          <span
+            className="hover:underline cursor-pointer"
+            onClick={() => {
+              handleScroll(skillRef);
+            }}
+          >
+            Skills
           </span>
           <span
             className="hover:underline cursor-pointer"
@@ -69,23 +81,23 @@ const HomePage = () => {
           <span
             className="hover:underline cursor-pointer"
             onClick={() => {
-              handleScroll(skillRef);
+              handleScroll(eduRef);
             }}
           >
-            Skills
+            Education
           </span>
         </div>
         <div className="flex w-[13vw] items-center justify-evenly h-fit">
           <Link href="https://www.instagram.com/">
             <FaInstagram
               size={30}
-              className="hover:text-blue-500 transition-all duration-300 hover:scale-110 cursor-pointer"
+              className="text-amber-800 transition-all duration-300 hover:scale-110 cursor-pointer"
             />
           </Link>
           <Link href="https://www.linkedin.com/feed/" target="_blank">
             <FaLinkedinIn
               size={30}
-              className="hover:text-blue-500 transition-all duration-300 hover:scale-110 cursor-pointer"
+              className="text-blue-500 transition-all duration-300 hover:scale-110 cursor-pointer"
             />
           </Link>
           {/* <CiFacebook size={30} /> */}
@@ -93,7 +105,7 @@ const HomePage = () => {
           <Link href="mailto:himanshuhada17@gmail.com">
             <SiGmail
               size={22}
-              className="hover:text-blue-500 transition-all duration-300 hover:scale-110 cursor-pointer"
+              className="text-red-500 transition-all duration-300 hover:scale-110 cursor-pointer"
             />
           </Link>
         </div>
@@ -101,7 +113,10 @@ const HomePage = () => {
       <div className="mt-20 pb-28  w-full flex justify-center ">
         <div className="w-[60vw] space-y-12 ">
           {/* //First Section */}
-          <div className="w-full flex justify-between mt-7 fade-in-top" ref={homeRef}>
+          <div
+            className="w-full flex justify-between mt-7 fade-in-right"
+            ref={aboutRef}
+          >
             <div className="w-[55%] space-y-5 ">
               <span className="text-5xl font-bold">A little bit about me</span>
               <p className="leading-relaxed">
@@ -130,7 +145,7 @@ const HomePage = () => {
                 alt={""}
                 height={300}
                 width={300}
-                className="object-contain rounded-3xl"
+                className="object-contain rounded-3xl h-fit"
               />
             </div>
           </div>
@@ -139,7 +154,7 @@ const HomePage = () => {
             <button className="text-white bg-black rounded-2xl p-2">Download</button>
           </div> */}
           {/* //Second Section */}
-          {/* <div className="fade-in-top">
+          {/* <div className="fade-in-right">
             <button
               className="text-white text-lg bg-black rounded-2xl p-3 px-3 flex items-center gap-2"
               onClick={() => {
@@ -159,7 +174,7 @@ const HomePage = () => {
             </button>
           </div> */}
           {/* //Third Section */}
-          <div className="w-full space-y-11 fade-in-top" ref={expRef}>
+          <div className="w-full space-y-11 fade-in-right1" ref={expRef}>
             <div className="flex items-center w-full overflow-hidden">
               <div className="text-5xl font-bold">Experience</div>
               {/* <Divider className="ml-4 w-fit" /> */}
@@ -206,6 +221,102 @@ const HomePage = () => {
                     <div className="text-gray-500 font-light">
                       Sep 2023 - Feb 2024 • 6 mos
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Fourth section */}
+          <div className="w-full space-y-11 fade-in-right2" ref={skillRef}>
+            <div className="flex items-center w-full overflow-hidden">
+              <div className="text-5xl font-bold">Skills</div>
+              {/* <Divider className="ml-4 w-fit" /> */}
+              <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div>
+            </div>
+          </div>
+          {/* Fifth Section */}
+          <div className="w-full space-y-11 fade-in-right3" ref={projRef}>
+            <div className="flex items-center w-full overflow-hidden">
+              <div className="text-5xl font-bold">Projects</div>
+              {/* <Divider className="ml-4 w-fit" /> */}
+              <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div>
+            </div>
+          </div>
+          {/* Sixth Section */}
+          <div className="w-full space-y-11 fade-in-right3" ref={eduRef}>
+            <div className="flex items-center w-full overflow-hidden">
+              <div className="text-5xl font-bold">Education</div>
+              {/* <Divider className="ml-4 w-fit" /> */}
+              <div className="ml-4 w-fit h-[1px] mt-2 bg-gray-200 flex-grow"></div>
+            </div>
+            <div className="space-y-8">
+              <div className="text-xl font-light border-l-8 border-gray-200 bg-gradient-to-r from-gray-100 to-white pl-3 w-fit">
+                GRADUATION
+              </div>
+              <div className="w-full flex gap-4">
+                <Image
+                  src={techno}
+                  alt=""
+                  height={75}
+                  width={75}
+                  className="rounded-lg h-fit"
+                />
+                <div className="">
+                  <div className="font-semibold">
+                    Techno India NJR Institute of Technology, Udaipur
+                  </div>
+                  <div className="font-light">2020-2024 (Computer Science)</div>
+                  <div className=" font-normal">
+                    Aggregate - <span className=" font-medium">9.39 SGPA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-8">
+              <div className="text-xl font-light border-l-8 border-gray-200 bg-gradient-to-r from-gray-100 to-white pl-3 w-fit">
+                SENIOR SECONDARY EDUCATION
+              </div>
+              <div className="w-full flex gap-4">
+                <Image
+                  src={mmps}
+                  alt=""
+                  height={75}
+                  width={75}
+                  className="rounded-lg h-fit"
+                />
+                <div className="">
+                  <div className="font-semibold">
+                    Maharana Mewar Public School, Udaipur
+                  </div>
+                  <div className="font-light">2019-2020 (PCM)</div>
+                  <div className="font-light">CBSE</div>
+
+                  <div className=" font-normal">
+                    Grade - <span className="font-medium">90.2%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-8">
+              <div className="text-xl font-light border-l-8 border-gray-200 bg-gradient-to-r from-gray-100 to-white pl-3 w-fit">
+                SECONDARY EDUCATION
+              </div>
+              <div className="w-full flex gap-4">
+                <Image
+                  src={centralAcademy}
+                  alt=""
+                  height={75}
+                  width={75}
+                  className="rounded-lg h-fit"
+                />
+                <div className="">
+                  <div className="font-semibold">
+                    Central Academy Sr. Sec. School, Udaipur
+                  </div>
+                  <div className="font-light">2017-2018</div>
+                  <div className="font-light">CBSE</div>
+                  <div className=" font-normal">
+                    Grade - <span className="font-medium"> 83.4%</span>
                   </div>
                 </div>
               </div>
