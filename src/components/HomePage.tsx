@@ -4,9 +4,11 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
 import { LuSun } from "react-icons/lu";
+import { FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
+import { FaPhone } from "react-icons/fa6";
 import photo from "../../public/images/IMG_1117 2.jpg";
 import { FaFilePdf } from "react-icons/fa6";
 import { FiMoon } from "react-icons/fi";
@@ -36,14 +38,81 @@ const HomePage = () => {
     setToggleTheme((prev) => !prev);
   };
 
+  const educationData = [
+    {
+      level: "GRADUATION",
+      image: techno,
+      name: "Techno India NJR Institute of Technology, Udaipur",
+      year: "2020-2024 (Computer Science)",
+      board: "RTU",
+      grade: "Aggregate - 9.39 SGPA",
+    },
+    {
+      level: "SENIOR SECONDARY EDUCATION",
+      image: mmps,
+      name: "Maharana Mewar Public School, Udaipur",
+      year: "2019-2020 (PCM)",
+      board: "CBSE",
+      grade: "Grade - 90.2%",
+    },
+    {
+      level: "SECONDARY EDUCATION",
+      image: centralAcademy,
+      name: "Central Academy Sr. Sec. School, Udaipur",
+      year: "2017-2018",
+      board: "CBSE",
+      grade: "Grade - 83.4%",
+    },
+  ];
+
+  const contactUsData = [
+    {
+      link: "https://www.instagram.com/",
+      icon: (
+        <FaInstagram className="text-xl sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
+      ),
+      // size: 30,
+    },
+    {
+      link: "https://www.linkedin.com/feed/",
+      icon: (
+        <FaLinkedinIn className="text-xl sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
+      ),
+      // size: 30,
+    },
+    {
+      link: "mailto:himanshuhada17@gmail.com",
+      icon: (
+        <SiGmail className="text-xl sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
+      ),
+      // size: 30,
+    },
+    {
+      link: "https://github.com/himanshuhada17",
+      icon: (
+        <FaGithub className="text-xl sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
+      ),
+      // size: 30,
+    },
+    {
+      link: "tel:9587555773",
+      icon: (
+        <FaPhone className="text-xl sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
+      ),
+      // size: 30,
+    },
+  ];
+
   return (
     <>
+      {/* navbar */}
       <div
         className={`w-full flex items-center justify-between  ${
           toggleTheme ? "bg-black/40 black-theme" : "bg-white/40"
         }  backdrop-blur-md  px-4 h-20 shadow-md fixed top-0`}
       >
         <span className="text-xl font-thin flex items-center">
+          
           <span className="font-normal">Himanshu Hada</span>{" "}
           <span className="sm:block hidden"> - Frontend Developer</span>
         </span>
@@ -98,8 +167,8 @@ const HomePage = () => {
             Education
           </span>
         </div>
-        <div className="flex w-[46vw] sm:w-[13vw] items-center justify-evenly h-fit">
-          <Link href="https://www.instagram.com/">
+        <div className="flex w-[13vw] sm:w-[7vw] items-center justify-evenly h-fit">
+          {/* <Link href="https://www.instagram.com/">
             <FaInstagram
               // size={30}
               className="text-amber-800 text-2xl transition-all duration-300 hover:scale-110 cursor-pointer"
@@ -110,15 +179,15 @@ const HomePage = () => {
               // size={30}
               className="text-blue-500 text-2xl transition-all duration-300 hover:scale-110 cursor-pointer"
             />
-          </Link>
+          </Link> */}
           {/* <CiFacebook size={30} /> */}
           {/* <FaPhoneAlt size={22} /> */}
-          <Link href="mailto:himanshuhada17@gmail.com">
+          {/* <Link href="mailto:himanshuhada17@gmail.com">
             <SiGmail
               // size={22}
               className="text-red-500 text-xl transition-all duration-300 hover:scale-110 cursor-pointer"
             />
-          </Link>
+          </Link> */}
           <button
             className="border-[1px] p-2 rounded-full hover:text-blue-500 hover:border-blue-500 transition-all duration-300"
             onClick={handleToggle}
@@ -127,6 +196,7 @@ const HomePage = () => {
           </button>
         </div>
       </div>
+      {/* content */}
       <div
         className={`pt-20 pb-28  w-full flex justify-center ${
           toggleTheme ? "black-background" : null
@@ -157,11 +227,11 @@ const HomePage = () => {
               <p className="leading-relaxed">
                 As a Frontend Developer for MedicalEshop, I developed and
                 maintained the ecommerce site's frontend using{" "}
-                <span className="font-bold text-purple-900">Tailwind CSS</span>{" "}
+                <span className="font-bold text-purple-500">Tailwind CSS</span>{" "}
                 for responsive and modern UI components,{" "}
-                <span className="font-bold text-purple-900">TypeScript</span>{" "}
+                <span className="font-bold text-purple-500">TypeScript</span>{" "}
                 for type-safe coding, and{" "}
-                <span className="font-bold text-purple-900">React.js</span> for
+                <span className="font-bold text-purple-500">React.js</span> for
                 dynamic and interactive features. My work included collaborating
                 with the backend team to integrate APIs, ensuring seamless
                 functionality, and enhancing the overall user experience.
@@ -302,96 +372,68 @@ const HomePage = () => {
                 }  flex-grow`}
               ></div>
             </div>
-            <div className="space-y-8">
-              <div
-                className={`text-xl font-light border-l-8  ${
-                  !toggleTheme
-                    ? "bg-gradient-to-r from-gray-100 to-white border-gray-200"
-                    : " border-gray-800"
-                }  pl-3 w-fit`}
-              >
-                GRADUATION
-              </div>
-              <div className="w-full flex gap-4">
-                <Image
-                  src={techno}
-                  alt=""
-                  height={75}
-                  width={75}
-                  className="rounded-lg h-fit"
-                />
-                <div className="">
-                  <div className="font-semibold">
-                    Techno India NJR Institute of Technology, Udaipur
-                  </div>
-                  <div className="font-light">2020-2024 (Computer Science)</div>
-                  <div className=" font-normal">
-                    Aggregate - <span className=" font-medium">9.39 SGPA</span>
-                  </div>
+            {educationData?.map((i) => (
+              <div className="space-y-8">
+                <div
+                  className={`text-xl font-light border-l-8  ${
+                    !toggleTheme
+                      ? "bg-gradient-to-r from-gray-100 to-white border-gray-200"
+                      : " border-gray-800"
+                  }  pl-3 w-fit`}
+                >
+                  {i?.level}
                 </div>
-              </div>
-            </div>
-            <div className="space-y-8">
-              <div
-                className={`text-xl font-light border-l-8  ${
-                  !toggleTheme
-                    ? "bg-gradient-to-r from-gray-100 to-white border-gray-200"
-                    : " border-gray-800"
-                }  pl-3 w-fit`}
-              >
-                SENIOR SECONDARY EDUCATION
-              </div>
-              <div className="w-full flex gap-4">
-                <Image
-                  src={mmps}
-                  alt=""
-                  height={75}
-                  width={75}
-                  className="rounded-lg h-fit"
-                />
-                <div className="">
-                  <div className="font-semibold">
-                    Maharana Mewar Public School, Udaipur
-                  </div>
-                  <div className="font-light">2019-2020 (PCM)</div>
-                  <div className="font-light">CBSE</div>
+                <div className="w-full flex gap-4">
+                  <Image
+                    src={i?.image}
+                    alt=""
+                    height={75}
+                    width={75}
+                    className="rounded-lg h-fit"
+                  />
+                  <div className="">
+                    <div className="font-semibold">{i?.name}</div>
+                    <div className="font-light">{i?.year}</div>
+                    <div className="font-light">{i?.board}</div>
 
-                  <div className=" font-normal">
-                    Grade - <span className="font-medium">90.2%</span>
+                    <div className=" font-medium">{i?.grade}</div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="space-y-8">
-              <div
-                className={`text-xl font-light border-l-8  ${
-                  !toggleTheme
-                    ? "bg-gradient-to-r from-gray-100 to-white border-gray-200"
-                    : " border-gray-800"
-                }  pl-3 w-fit`}
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* footer */}
+      <div
+        className={`w-full  ${
+          toggleTheme ? "bg-slate-900 text-white" : "bg-gray-100"
+        } space-y-4 sm:space-y-5 p-4 sm:p-7`}
+      >
+        <div className="flex items-center justify-center">
+          <div className="flex items-center space-x-7  justify-center">
+            {contactUsData?.map((i) => (
+              <Link
+                href={i?.link}
+                className={`border-[1px] ${
+                  toggleTheme ? "border-gray-700" : ""
+                } rounded-2xl p-3`}
               >
-                SECONDARY EDUCATION
-              </div>
-              <div className="w-full flex gap-4">
-                <Image
-                  src={centralAcademy}
-                  alt=""
-                  height={75}
-                  width={75}
-                  className="rounded-lg h-fit"
-                />
-                <div className="">
-                  <div className="font-semibold">
-                    Central Academy Sr. Sec. School, Udaipur
-                  </div>
-                  <div className="font-light">2017-2018</div>
-                  <div className="font-light">CBSE</div>
-                  <div className=" font-normal">
-                    Grade - <span className="font-medium"> 83.4%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+                {/* <FaInstagram
+                  // size={30}
+                  className="text-amber-800 text-2xl transition-all duration-300 hover:scale-110 cursor-pointer"
+                /> */}
+                {i?.icon}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className=" w-full flex items-center justify-center">
+          <div className={` ${toggleTheme ? 'bg-gray-800' : 'bg-gray-200'} h-[1px] w-[70vw]`}></div>
+        </div>
+        <div className=" w-full flex items-center justify-center">
+          <div className="text-sm font-thin">
+            Designed By 👾 Himanshu @ All Rights Reserved
           </div>
         </div>
       </div>
