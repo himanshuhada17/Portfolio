@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
 import { LuSun } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
+import { RiMenuFold4Fill } from "react-icons/ri";
 import { SiGmail } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,6 +18,7 @@ import tdclogo from "../../public/images/the_developer_company_logo.jpg";
 import centralAcademy from "../../public/images/central_academy.png";
 import mmps from "../../public/images/mmps.png";
 import techno from "../../public/images/techno.jpg";
+import { Box, Menu, MenuItem, SpeedDial, SpeedDialAction, SpeedDialIcon, Tooltip } from "@mui/material";
 
 const HomePage = () => {
   const expRef = useRef(null);
@@ -25,6 +27,8 @@ const HomePage = () => {
   const skillRef = useRef(null);
   const eduRef = useRef(null);
   const [toggleTheme, setToggleTheme] = useState(false);
+  // const [modal, setModal] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleScroll = (ref: any) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
@@ -36,6 +40,14 @@ const HomePage = () => {
 
   const handleToggle = () => {
     setToggleTheme((prev) => !prev);
+  };
+
+  const handleClick = (event: any) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   const educationData = [
@@ -69,38 +81,49 @@ const HomePage = () => {
     {
       link: "https://www.instagram.com/",
       icon: (
-        <FaInstagram className="text-xl sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
+        <FaInstagram className="text-md sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
       ),
       // size: 30,
     },
     {
       link: "https://www.linkedin.com/feed/",
       icon: (
-        <FaLinkedinIn className="text-xl sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
+        <FaLinkedinIn className="text-md sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
       ),
       // size: 30,
     },
     {
       link: "mailto:himanshuhada17@gmail.com",
       icon: (
-        <SiGmail className="text-xl sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
+        <SiGmail className="text-md sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
       ),
       // size: 30,
     },
     {
       link: "https://github.com/himanshuhada17",
       icon: (
-        <FaGithub className="text-xl sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
+        <FaGithub className="text-md sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
       ),
       // size: 30,
     },
     {
       link: "tel:9587555773",
       icon: (
-        <FaPhone className="text-xl sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
+        <FaPhone className="text-md sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
       ),
       // size: 30,
     },
+  ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const actions = [
+    { icon: <FaPhoneAlt />, name: 'Copy' },
+    { icon: <FaPhoneAlt />, name: 'Save' },
+    { icon: <FaPhoneAlt />, name: 'Print' },
+    { icon: <FaPhoneAlt />, name: 'Share' },
   ];
 
   return (
@@ -112,8 +135,82 @@ const HomePage = () => {
         }  backdrop-blur-md  px-4 h-20 shadow-md fixed top-0`}
       >
         <span className="text-xl font-thin flex items-center">
-          
-          <span className="font-normal">Himanshu Hada</span>{" "}
+          <div className="flex items-center space-x-4">
+            <RiMenuFold4Fill
+              onClick={handleClick}
+              size={28}
+              className={` sm:hidden rounded-md border-[1px] transition-all duration-300 p-1 ${
+                toggleTheme
+                  ? "border-gray-600 hover:bg-purple-500/35"
+                  : "hover:bg-purple-500/25"
+              }`}
+            />
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              sx={{
+                "& .MuiPaper-root": {
+                  backgroundColor: toggleTheme ? "#333" : "#fff", // Menu background color
+                  color: toggleTheme ? "#fff" : "#000", // Menu text color
+                },
+              }}
+            >
+              <MenuItem
+                onClick={() => {
+                  handleScroll(aboutRef);
+                  handleClose();
+                }}
+              >
+                About
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  handleScroll(expRef);
+                  handleClose();
+                }}
+              >
+                Experience
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  handleScroll(skillRef);
+                  handleClose();
+                }}
+              >
+                Skills
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  handleScroll(projRef);
+                  handleClose();
+                }}
+              >
+                Projects
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  handleScroll(eduRef);
+                  handleClose();
+                }}
+              >
+                Education
+              </MenuItem>
+            </Menu>
+            <span className="font-normal">Himanshu Hada</span>{" "}
+          </div>
           <span className="sm:block hidden"> - Frontend Developer</span>
         </span>
         <div className="sm:flex  hidden items-center justify-between w-[40vw] text-xl font-light">
@@ -188,12 +285,32 @@ const HomePage = () => {
               className="text-red-500 text-xl transition-all duration-300 hover:scale-110 cursor-pointer"
             />
           </Link> */}
-          <button
-            className="border-[1px] p-2 rounded-full hover:text-blue-500 hover:border-blue-500 transition-all duration-300"
-            onClick={handleToggle}
-          >
-            {toggleTheme ? <FiMoon /> : <LuSun />}
-          </button>
+          <Tooltip title="Change Theme">
+            <button
+              className={`border-[1px] ${
+                toggleTheme ? "border-gray-600" : ""
+              } p-2 rounded-full hover:text-blue-500 hover:border-blue-500 transition-all duration-300`}
+              onClick={handleToggle}
+            >
+              {toggleTheme ? <FiMoon /> : <LuSun />}
+            </button>
+          </Tooltip>
+          {/* <Box sx={{ height: 62, transform: "translateZ(0px)", flexGrow: 1 }}>
+            <SpeedDial
+              ariaLabel="SpeedDial basic example"
+              // sx={{ position: "absolute", bottom: 92, right: 0 }}
+              icon={<SpeedDialIcon />}
+              direction="down"
+            >
+              {actions.map((action) => (
+                <SpeedDialAction
+                  key={action.name}
+                  icon={action.icon}
+                  tooltipTitle={action.name}
+                />
+              ))}
+            </SpeedDial>
+          </Box> */}
         </div>
       </div>
       {/* content */}
@@ -217,7 +334,7 @@ const HomePage = () => {
                   width={130}
                   className="object-contain rounded-3xl h-fit"
                 />
-                <span className="text-5xl font-bold">
+                <span className="text-[30px] w-[37%] font-bold break-words">
                   A little bit about me
                 </span>
               </div>
@@ -429,7 +546,11 @@ const HomePage = () => {
           </div>
         </div>
         <div className=" w-full flex items-center justify-center">
-          <div className={` ${toggleTheme ? 'bg-gray-800' : 'bg-gray-200'} h-[1px] w-[70vw]`}></div>
+          <div
+            className={` ${
+              toggleTheme ? "bg-gray-800" : "bg-gray-200"
+            } h-[1px] w-[70vw]`}
+          ></div>
         </div>
         <div className=" w-full flex items-center justify-center">
           <div className="text-sm font-thin">
