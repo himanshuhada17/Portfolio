@@ -334,7 +334,7 @@ const HomePage = () => {
                   width={130}
                   className="object-contain rounded-3xl h-fit"
                 />
-                <span className="text-[30px] w-[37%] font-bold break-words">
+                <span className="text-[30px] w-[37%] font-bold">
                   A little bit about me
                 </span>
               </div>
