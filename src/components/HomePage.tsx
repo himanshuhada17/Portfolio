@@ -225,7 +225,7 @@ const HomePage = () => {
                 alt=""
                 height={75}
                 width={75}
-                className="rounded-lg"
+                className="rounded-lg object-contain"
               />
               <div className="">
                 <div className="font-semibold">TDC Consultancy Pvt. Ltd.</div>
