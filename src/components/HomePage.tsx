@@ -179,6 +179,7 @@ const HomePage = () => {
               }`}
             />
             <Menu
+            className="z-[9999999]"
               id="basic-menu"
               anchorEl={anchorEl}
               open={Boolean(anchorEl)}
