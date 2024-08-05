@@ -5,7 +5,20 @@ import { CiFacebook } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
 import newImage from "../../public/images/IMG_9764 2.jpg";
 import { LuSun } from "react-icons/lu";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { IoIosArrowForward } from "react-icons/io";
+import typeorm from "../../public/images/orm.png";
+import graphql from "../../public/images/graphql.png";
+import react from "../../public/images/react.png";
+import github from "../../public/images/github.png";
+import figma from "../../public/images/figma.png";
+import docu from "../../public/images/docu.png";
+import ts from "../../public/images/ts.png";
+import node from "../../public/images/nodejs.jpeg";
+import js from "../../public/images/js.png";
+import antd from "../../public/images/antd.png";
+import tail from "../../public/images/tail.jpeg";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { Carousel } from "react-responsive-carousel";
 import { FaGithub } from "react-icons/fa";
@@ -98,6 +111,96 @@ const HomePage = () => {
       // size: 30,
     },
   ];
+
+  const projData = [
+    {
+      topic: "Hostel Management System",
+      description:
+        "Developed a comprehensive hostel management system admin panel to efficiently manage various domains within a hostel environment",
+      styleDarkTheme: "from-blue-700/80 via-blue-300/80 to-slate-500/80",
+      styleLightTheme: "from-blue-600/50 via-purple-500/50 to-slate-500/50",
+    },
+    {
+      topic: "MotorMania a Figma Design",
+      description:
+        " Motor Mania(UI/UX Design) - Platform for automobile industry to purchase/book a service, rate and review for the newly launched vehicles.",
+      styleDarkTheme: "from-green-600/80 via-teal-600-500/80 to-slate-500/80",
+      styleLightTheme: "from-green-600/50 via-teal-600-500/50 to-slate-500/50",
+    },
+    {
+      topic: "Database Design for Travel Management",
+      description:
+        "Designed a comprehensive database for a travel management system, analyzing various entities and establishing  relationships between them to ensure efficient data management.",
+      styleDarkTheme: "from-red-600/80 via-purple-500/80 to-slate-500/80",
+      styleLightTheme: "from-red-600/50 via-purple-500/50 to-slate-500/50",
+    },
+    {
+      topic: "Database Design for Travel Management",
+      description:
+        "Designed a comprehensive database for a travel management system, analyzing various entities and establishing relationships between them to ensure efficient data management.",
+      styleDarkTheme: "from-blue-600/80 via-yellow-500/80 to-slate-500/80",
+      styleLightTheme: "from-blue-600/50 via-yellow-500/50 to-slate-500/50",
+    },
+  ];
+  const frontEnd = [
+    {
+      image: react,
+      skill: "React",
+    },
+    {
+      image: react,
+      skill: "React Native",
+    },
+  ];
+  const backEnd = [
+    {
+      image: node,
+      skill: "Node.Js",
+    },
+  ];
+  const UI = [
+    {
+      image: tail,
+      skill: "Tailwind CSS",
+    },
+    {
+      image: antd,
+      skill: "Ant Design",
+    },
+    {
+      image: figma,
+      skill: "Figma",
+    },
+  ];
+  const languages = [
+    {
+      image: ts,
+      skill: "Typescript",
+    },
+    {
+      image: js,
+      skill: "Javascript",
+    },
+  ];
+
+  const other = [
+    {
+      image: graphql,
+      skill: "Garphql",
+    },
+    {
+      image: typeorm,
+      skill: "Typeorm",
+    },
+    {
+      image: docu,
+      skill: "Docusaurus",
+    },
+    {
+      image: github,
+      skill: "Github",
+    },
+  ];
   const expRef = useRef(null);
   const aboutRef = useRef(null);
   const projRef = useRef(null);
@@ -179,7 +282,7 @@ const HomePage = () => {
               }`}
             />
             <Menu
-            className="z-[9999999]"
+              className="z-[9999999]"
               id="basic-menu"
               anchorEl={anchorEl}
               open={Boolean(anchorEl)}
@@ -525,6 +628,160 @@ const HomePage = () => {
                 }  flex-grow`}
               ></div>
             </div>
+            {/* FrontEnd */}
+            <div>
+              <div className="text-xl font-light flex items-center">
+                Front-End
+                <IoIosArrowForward className="text-sm ml-2" />
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-5 sm:gap-x-6 gap-x-3">
+                {frontEnd?.map((i) => (
+                  <div>
+                    <Image
+                      src={i?.image}
+                      height={42}
+                      width={42}
+                      alt=""
+                      className=" rounded-full relative top-5 right-1 sm:right-4   border-[1px]"
+                      style={{
+                        objectFit: "cover",
+                      }}
+                    />
+                    <div
+                      className={` sm:p-3 p-2 rounded-2xl border-[1px] ${
+                        toggleTheme ? "border-gray-600" : ""
+                      }  text-center font-thin text-lg`}
+                    >
+                      {i?.skill}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* backend */}
+            <div>
+              <div className="text-xl font-light flex items-center">
+                Back-End
+                <IoIosArrowForward className="text-sm ml-2" />
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-5 sm:gap-x-6 gap-x-3">
+                {backEnd?.map((i) => (
+                  <div>
+                    <Image
+                      src={i?.image}
+                      height={42}
+                      width={42}
+                      alt=""
+                      className=" rounded-full relative top-5 right-1 sm:right-4   border-[1px]"
+                      style={{
+                        objectFit: "cover",
+                      }}
+                    />
+                    <div
+                      className={` sm:p-3 p-2 rounded-2xl border-[1px] ${
+                        toggleTheme ? "border-gray-600" : ""
+                      }  text-center font-thin text-lg`}
+                    >
+                      {" "}
+                      {i?.skill}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* UI */}
+            <div>
+              <div className="text-xl font-light flex items-center">
+                UI
+                <IoIosArrowForward className="text-sm ml-2" />
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-5 sm:gap-x-6 gap-x-3">
+                {UI?.map((i) => (
+                  <div>
+                    <Image
+                      src={i?.image}
+                      height={42}
+                      width={42}
+                      alt=""
+                      className=" rounded-full relative top-5 right-1 sm:right-4   border-[1px]"
+                      style={{
+                        objectFit: "cover",
+                      }}
+                    />
+                    <div
+                      className={` sm:p-3 p-2 rounded-2xl border-[1px] ${
+                        toggleTheme ? "border-gray-600" : ""
+                      }  text-center font-thin text-lg`}
+                    >
+                      {" "}
+                      {i?.skill}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* languages */}
+            <div>
+              <div className="text-xl font-light flex items-center">
+                Languages
+                <IoIosArrowForward className="text-sm ml-2" />
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-5 sm:gap-x-6 gap-x-3">
+                {languages?.map((i) => (
+                  <div>
+                    <Image
+                      src={i?.image}
+                      height={42}
+                      width={42}
+                      alt=""
+                      className=" rounded-full relative top-5 right-1 sm:right-4   border-[1px]"
+                      style={{
+                        objectFit: "cover",
+                      }}
+                    />
+                    <div
+                      className={` sm:p-3 p-2 rounded-2xl border-[1px] ${
+                        toggleTheme ? "border-gray-600" : ""
+                      }  text-center font-thin text-lg`}
+                    >
+                      {" "}
+                      {i?.skill}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* other */}
+            <div>
+              <div className="text-xl font-light flex items-center">
+                Other
+                <IoIosArrowForward className="text-sm ml-2" />
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-5 sm:gap-x-6 gap-x-3">
+                {other?.map((i) => (
+                  <div>
+                    <Image
+                      src={i?.image}
+                      height={42}
+                      width={42}
+                      alt=""
+                      className=" rounded-full relative top-5 right-1 sm:right-4  border-[1px]"
+                      style={{
+                        objectFit: "cover",
+                      }}
+                    />
+                    <div
+                      className={` sm:p-3 p-2 rounded-2xl border-[1px] ${
+                        toggleTheme ? "border-gray-600" : ""
+                      }  text-center font-thin text-lg`}
+                    >
+                      {" "}
+                      {i?.skill}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
           {/* Fifth Section */}
           <div className="w-full space-y-11 fade-in-right3" ref={projRef}>
@@ -538,77 +795,33 @@ const HomePage = () => {
                 }  flex-grow`}
               ></div>
             </div>
+            <div className="sm:grid grid-cols-2 gap-3  hidden">
+              {projData.map((i) => (
+                <div className="flex justify-center">
+                  <div
+                    className={`h-[30vh] bg-gradient-to-tl ${
+                      toggleTheme ? i.styleDarkTheme : i?.styleLightTheme
+                    }  p-4 space-y-3 rounded-lg w-fit`}
+                  >
+                    <p className="text-start">{i?.topic}</p>
+                    <p className="text-start text-xs">{i?.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
             <Carousel className="sm:hidden">
-              <div className="flex justify-center">
-                <div
-                  className={`h-[30vh] bg-gradient-to-tl ${
-                    toggleTheme
-                      ? "from-blue-700/80 via-blue-300/80 to-slate-500/80"
-                      : "from-blue-600/30 via-purple-500/30 to-slate-500/30"
-                  }  p-4 space-y-3 rounded-lg w-[99%]`}
-                >
-                  <p className="text-start">Hostel Management System</p>
-                  <p className="text-start text-xs">
-                    Developed a comprehensive hostel management system admin
-                    panel to efficiently manage various domains within a hostel
-                    environment
-                  </p>
+              {projData.map((i) => (
+                <div className="flex justify-center">
+                  <div
+                    className={`h-[30vh] bg-gradient-to-tl ${
+                      toggleTheme ? i.styleDarkTheme : i?.styleLightTheme
+                    }  p-4 space-y-3 rounded-lg w-[99%]`}
+                  >
+                    <p className="text-start">{i?.topic}</p>
+                    <p className="text-start text-xs">{i?.description}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex justify-center">
-                <div
-                  className={`h-[30vh] bg-gradient-to-tl ${
-                    toggleTheme
-                      ? "from-green-600/80 via-teal-600-500/80 to-slate-500/80"
-                      : "from-green-600/30 via-teal-600-500/30 to-slate-500/30"
-                  }   p-4 space-y-3 rounded-lg w-[99%]`}
-                >
-                  <p className="text-start">MotorMania a Figma Design</p>
-                  <p className="text-start text-xs">
-                    Motor Mania(UI/UX Design) - Platform for automobile industry
-                    to purchase/book a service, rate and review for the newly
-                    launched vehicles.
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <div
-                  className={`h-[30vh] bg-gradient-to-tl ${
-                    toggleTheme
-                      ? "from-red-600/80 via-purple-500/80 to-slate-500/80"
-                      : "from-red-600/30 via-purple-500/30 to-slate-500/30"
-                  }   p-4 space-y-3 rounded-lg w-[99%]`}
-                >
-                  <p className="text-start">
-                    Database Design for Travel Management
-                  </p>
-                  <p className="text-start text-xs">
-                    Designed a comprehensive database for a travel management
-                    system, analyzing various entities and establishing
-                    relationships between them to ensure efficient data
-                    management.
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <div
-                  className={`h-[30vh] bg-gradient-to-tl ${
-                    toggleTheme
-                      ? "from-blue-600/80 via-yellow-500/80 to-slate-500/80 "
-                      : "from-blue-600/30 via-yellow-500/30 to-slate-500/30 "
-                  }  p-4 space-y-3 rounded-lg w-[99%]`}
-                >
-                  <p className="text-start">
-                    Database Design for Travel Management
-                  </p>
-                  <p className="text-start text-xs">
-                    Designed a comprehensive database for a travel management
-                    system, analyzing various entities and establishing
-                    relationships between them to ensure efficient data
-                    management.
-                  </p>
-                </div>
-              </div>
+              ))}
             </Carousel>
           </div>
           {/* Sixth Section */}
