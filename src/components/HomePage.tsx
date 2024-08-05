@@ -3,8 +3,11 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
-import newImage from '../../public/images/IMG_9764 2.jpg'
+import newImage from "../../public/images/IMG_9764 2.jpg";
 import { LuSun } from "react-icons/lu";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
+import { Carousel } from "react-responsive-carousel";
 import { FaGithub } from "react-icons/fa";
 import { RiMenuFold4Fill } from "react-icons/ri";
 import { SiGmail } from "react-icons/si";
@@ -160,7 +163,7 @@ const HomePage = () => {
     <>
       {/* navbar */}
       <div
-        className={`w-full flex items-center justify-between  ${
+        className={`w-full flex items-center justify-between z-[9999]  ${
           toggleTheme ? "bg-black/40 black-theme" : "bg-white/40"
         }  backdrop-blur-md  px-4 h-20 shadow-md fixed top-0`}
       >
@@ -534,6 +537,78 @@ const HomePage = () => {
                 }  flex-grow`}
               ></div>
             </div>
+            <Carousel className="sm:hidden">
+              <div className="flex justify-center">
+                <div
+                  className={`h-[30vh] bg-gradient-to-tl ${
+                    toggleTheme
+                      ? "from-blue-700/80 via-blue-300/80 to-slate-500/80"
+                      : "from-blue-600/30 via-purple-500/30 to-slate-500/30"
+                  }  p-4 space-y-3 rounded-lg w-[99%]`}
+                >
+                  <p className="text-start">Hostel Management System</p>
+                  <p className="text-start text-xs">
+                    Developed a comprehensive hostel management system admin
+                    panel to efficiently manage various domains within a hostel
+                    environment
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <div
+                  className={`h-[30vh] bg-gradient-to-tl ${
+                    toggleTheme
+                      ? "from-green-600/80 via-teal-600-500/80 to-slate-500/80"
+                      : "from-green-600/30 via-teal-600-500/30 to-slate-500/30"
+                  }   p-4 space-y-3 rounded-lg w-[99%]`}
+                >
+                  <p className="text-start">MotorMania a Figma Design</p>
+                  <p className="text-start text-xs">
+                    Motor Mania(UI/UX Design) - Platform for automobile industry
+                    to purchase/book a service, rate and review for the newly
+                    launched vehicles.
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <div
+                  className={`h-[30vh] bg-gradient-to-tl ${
+                    toggleTheme
+                      ? "from-red-600/80 via-purple-500/80 to-slate-500/80"
+                      : "from-red-600/30 via-purple-500/30 to-slate-500/30"
+                  }   p-4 space-y-3 rounded-lg w-[99%]`}
+                >
+                  <p className="text-start">
+                    Database Design for Travel Management
+                  </p>
+                  <p className="text-start text-xs">
+                    Designed a comprehensive database for a travel management
+                    system, analyzing various entities and establishing
+                    relationships between them to ensure efficient data
+                    management.
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <div
+                  className={`h-[30vh] bg-gradient-to-tl ${
+                    toggleTheme
+                      ? "from-blue-600/80 via-yellow-500/80 to-slate-500/80 "
+                      : "from-blue-600/30 via-yellow-500/30 to-slate-500/30 "
+                  }  p-4 space-y-3 rounded-lg w-[99%]`}
+                >
+                  <p className="text-start">
+                    Database Design for Travel Management
+                  </p>
+                  <p className="text-start text-xs">
+                    Designed a comprehensive database for a travel management
+                    system, analyzing various entities and establishing
+                    relationships between them to ensure efficient data
+                    management.
+                  </p>
+                </div>
+              </div>
+            </Carousel>
           </div>
           {/* Sixth Section */}
           <div className="w-full space-y-11 fade-in-right3" ref={eduRef}>
