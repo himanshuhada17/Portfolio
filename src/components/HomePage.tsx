@@ -128,11 +128,32 @@ const HomePage = () => {
   }, []);
 
   const actions = [
-    { icon: <FaPhoneAlt />, name: "Copy" },
-    { icon: <FaPhoneAlt />, name: "Save" },
-    { icon: <FaPhoneAlt />, name: "Print" },
-    { icon: <FaPhoneAlt />, name: "Share" },
+    {
+      icon: <FaInstagram />,
+      name: "Instagram",
+      link: "https://www.instagram.com",
+    },
+    {
+      icon: <FaLinkedinIn />,
+      name: "Linkedin",
+      link: "https://www.linkedin.com/feed/",
+    },
+    {
+      icon: <SiGmail />,
+      name: "Mail",
+      link: "mailto:himanshuhada17@gmail.com",
+    },
+    {
+      icon: <FaGithub />,
+      name: "Github",
+      link: "https://github.com/himanshuhada17",
+    },
+    { icon: <FaPhone />, name: "Phone", link: "tel:9587555773" },
   ];
+
+  const handleNavigation = (link: string) => {
+    window.open(link);
+  };
 
   return (
     <>
@@ -277,7 +298,7 @@ const HomePage = () => {
             Education
           </span>
         </div>
-        <div className="flex w-[17vw] sm:w-[7vw] items-center justify-evenly h-fit">
+        <div className="flex w-[19vw] sm:w-[7vw] items-center justify-evenly h-fit">
           {/* <Link href="https://www.instagram.com/">
             <FaInstagram
               // size={30}
@@ -315,19 +336,25 @@ const HomePage = () => {
               icon={<SpeedDialIcon />}
               direction="down"
               sx={{
-                '& .MuiFab-primary': {
+                "& .MuiFab-primary": {
                   width: 36, // Adjust the width of the SpeedDial
                   height: 36, // Adjust the height of the SpeedDial
-                }
+                  backgroundColor: "#6b5ede", // Adjust the background color of the actions
+                },
               }}
-              className="relative right-1 sm:right-0"
+              className="relative right-0 sm:right-0"
             >
               {actions.map((action) => (
+                // <Link href={action.link}>
                 <SpeedDialAction
                   key={action.name}
                   icon={action.icon}
                   tooltipTitle={action.name}
+                  onClick={() => {
+                    handleNavigation(action.link);
+                  }}
                 />
+                // </Link>
               ))}
             </SpeedDial>
           </Box>
