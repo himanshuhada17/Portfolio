@@ -3,6 +3,7 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
+import newImage from '../../public/images/IMG_9764 2.jpg'
 import { LuSun } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
 import { RiMenuFold4Fill } from "react-icons/ri";
@@ -339,7 +340,17 @@ const HomePage = () => {
                 "& .MuiFab-primary": {
                   width: 36, // Adjust the width of the SpeedDial
                   height: 36, // Adjust the height of the SpeedDial
+                  // backgroundColor: "#6b5ede", // Adjust the background color of the actions
                   backgroundColor: "#6b5ede", // Adjust the background color of the actions
+                  "&:hover": {
+                    backgroundColor: "#6b5ede", // Change this to the color you want on hover
+                  },
+                  "&:active": {
+                    backgroundColor: "#6b5ede", // Change this to the color you want on active
+                  },
+                  "&:focus": {
+                    backgroundColor: "#6b5ede", // Ensure the color stays the same when focused
+                  },
                 },
               }}
               className="relative right-0 sm:right-0"
