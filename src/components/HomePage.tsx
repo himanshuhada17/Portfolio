@@ -11,6 +11,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaPhone } from "react-icons/fa6";
 import photo from "../../public/images/IMG_1117 2.jpg";
+import { FcAbout } from "react-icons/fc";
 import { FaFilePdf } from "react-icons/fa6";
 import { FiMoon } from "react-icons/fi";
 import { Divider } from "antd";
@@ -18,38 +19,17 @@ import tdclogo from "../../public/images/the_developer_company_logo.jpg";
 import centralAcademy from "../../public/images/central_academy.png";
 import mmps from "../../public/images/mmps.png";
 import techno from "../../public/images/techno.jpg";
-import { Box, Menu, MenuItem, SpeedDial, SpeedDialAction, SpeedDialIcon, Tooltip } from "@mui/material";
+import {
+  Box,
+  Menu,
+  MenuItem,
+  SpeedDial,
+  SpeedDialAction,
+  SpeedDialIcon,
+  Tooltip,
+} from "@mui/material";
 
 const HomePage = () => {
-  const expRef = useRef(null);
-  const aboutRef = useRef(null);
-  const projRef = useRef(null);
-  const skillRef = useRef(null);
-  const eduRef = useRef(null);
-  const [toggleTheme, setToggleTheme] = useState(false);
-  // const [modal, setModal] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const handleScroll = (ref: any) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleToggle = () => {
-    setToggleTheme((prev) => !prev);
-  };
-
-  const handleClick = (event: any) => {
-    setAnchorEl(anchorEl ? null : event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   const educationData = [
     {
       level: "GRADUATION",
@@ -114,16 +94,44 @@ const HomePage = () => {
       // size: 30,
     },
   ];
+  const expRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projRef = useRef(null);
+  const skillRef = useRef(null);
+  const eduRef = useRef(null);
+  const [toggleTheme, setToggleTheme] = useState(false);
+  // const [modal, setModal] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleScroll = (ref: any) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleToggle = () => {
+    setToggleTheme((prev) => !prev);
+  };
+
+  const handleClick = (event: any) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const actions = [
-    { icon: <FaPhoneAlt />, name: 'Copy' },
-    { icon: <FaPhoneAlt />, name: 'Save' },
-    { icon: <FaPhoneAlt />, name: 'Print' },
-    { icon: <FaPhoneAlt />, name: 'Share' },
+    { icon: <FaPhoneAlt />, name: "Copy" },
+    { icon: <FaPhoneAlt />, name: "Save" },
+    { icon: <FaPhoneAlt />, name: "Print" },
+    { icon: <FaPhoneAlt />, name: "Share" },
   ];
 
   return (
@@ -173,6 +181,7 @@ const HomePage = () => {
                   handleScroll(aboutRef);
                   handleClose();
                 }}
+                className="font-thin"
               >
                 About
               </MenuItem>
@@ -181,6 +190,7 @@ const HomePage = () => {
                   handleScroll(expRef);
                   handleClose();
                 }}
+                className="font-thin"
               >
                 Experience
               </MenuItem>
@@ -189,6 +199,7 @@ const HomePage = () => {
                   handleScroll(skillRef);
                   handleClose();
                 }}
+                className="font-thin"
               >
                 Skills
               </MenuItem>
@@ -197,10 +208,12 @@ const HomePage = () => {
                   handleScroll(projRef);
                   handleClose();
                 }}
+                className="font-thin"
               >
                 Projects
               </MenuItem>
               <MenuItem
+                className="font-thin"
                 onClick={() => {
                   handleScroll(eduRef);
                   handleClose();
@@ -264,7 +277,7 @@ const HomePage = () => {
             Education
           </span>
         </div>
-        <div className="flex w-[13vw] sm:w-[7vw] items-center justify-evenly h-fit">
+        <div className="flex w-[17vw] sm:w-[7vw] items-center justify-evenly h-fit">
           {/* <Link href="https://www.instagram.com/">
             <FaInstagram
               // size={30}
@@ -295,12 +308,19 @@ const HomePage = () => {
               {toggleTheme ? <FiMoon /> : <LuSun />}
             </button>
           </Tooltip>
-          {/* <Box sx={{ height: 62, transform: "translateZ(0px)", flexGrow: 1 }}>
+          <Box sx={{ height: 37, transform: "translateZ(0px)", flexGrow: 1 }}>
             <SpeedDial
               ariaLabel="SpeedDial basic example"
               // sx={{ position: "absolute", bottom: 92, right: 0 }}
               icon={<SpeedDialIcon />}
               direction="down"
+              sx={{
+                '& .MuiFab-primary': {
+                  width: 36, // Adjust the width of the SpeedDial
+                  height: 36, // Adjust the height of the SpeedDial
+                }
+              }}
+              className="relative right-1 sm:right-0"
             >
               {actions.map((action) => (
                 <SpeedDialAction
@@ -310,7 +330,7 @@ const HomePage = () => {
                 />
               ))}
             </SpeedDial>
-          </Box> */}
+          </Box>
         </div>
       </div>
       {/* content */}
