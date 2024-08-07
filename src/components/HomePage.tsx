@@ -427,7 +427,7 @@ const HomePage = () => {
               className="text-red-500 text-xl transition-all duration-300 hover:scale-110 cursor-pointer"
             />
           </Link> */}
-          <Tooltip title="Change Theme">
+          {/* <Tooltip title="Change Theme" className="z-"> */}
             <button
               className={`border-[1px] ${
                 toggleTheme ? "border-gray-600" : ""
@@ -436,7 +436,7 @@ const HomePage = () => {
             >
               {toggleTheme ? <FiMoon /> : <LuSun />}
             </button>
-          </Tooltip>
+          {/* </Tooltip> */}
           <Box sx={{ height: 37, transform: "translateZ(0px)", flexGrow: 1 }}>
             <SpeedDial
               ariaLabel="SpeedDial basic example"
@@ -650,7 +650,7 @@ const HomePage = () => {
                     <div
                       className={` sm:p-3 p-2 rounded-2xl border-[1px] ${
                         toggleTheme ? "border-gray-600" : ""
-                      }  text-center font-thin text-lg`}
+                      }  text-center font-normal text-lg`}
                     >
                       {i?.skill}
                     </div>
@@ -680,7 +680,7 @@ const HomePage = () => {
                     <div
                       className={` sm:p-3 p-2 rounded-2xl border-[1px] ${
                         toggleTheme ? "border-gray-600" : ""
-                      }  text-center font-thin text-lg`}
+                      }  text-center font-normal text-lg`}
                     >
                       {" "}
                       {i?.skill}
@@ -711,7 +711,7 @@ const HomePage = () => {
                     <div
                       className={` sm:p-3 p-2 rounded-2xl border-[1px] ${
                         toggleTheme ? "border-gray-600" : ""
-                      }  text-center font-thin text-lg`}
+                      }  text-center font-normal text-lg`}
                     >
                       {" "}
                       {i?.skill}
@@ -742,7 +742,7 @@ const HomePage = () => {
                     <div
                       className={` sm:p-3 p-2 rounded-2xl border-[1px] ${
                         toggleTheme ? "border-gray-600" : ""
-                      }  text-center font-thin text-lg`}
+                      }  text-center font-normal text-lg`}
                     >
                       {" "}
                       {i?.skill}
@@ -773,7 +773,7 @@ const HomePage = () => {
                     <div
                       className={` sm:p-3 p-2 rounded-2xl border-[1px] ${
                         toggleTheme ? "border-gray-600" : ""
-                      }  text-center font-thin text-lg`}
+                      }  text-center font-normal text-lg`}
                     >
                       {" "}
                       {i?.skill}
