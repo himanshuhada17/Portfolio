@@ -76,7 +76,7 @@ const HomePage = () => {
 
   const contactUsData = [
     {
-      link: "https://www.instagram.com/",
+      link: "https://www.instagram.com/himanshu.hada17/?next=%2F",
       icon: (
         <FaInstagram className="text-md sm:text-2xl transition-all duration-300 hover:scale-110 cursor-pointer" />
       ),
@@ -238,7 +238,7 @@ const HomePage = () => {
     {
       icon: <FaInstagram />,
       name: "Instagram",
-      link: "https://www.instagram.com",
+      link: "https://www.instagram.com/himanshu.hada17/?next=%2F",
     },
     {
       icon: <FaLinkedinIn />,
@@ -428,14 +428,14 @@ const HomePage = () => {
             />
           </Link> */}
           {/* <Tooltip title="Change Theme" className="z-"> */}
-            <button
-              className={`border-[1px] ${
-                toggleTheme ? "border-gray-600" : ""
-              } p-2 rounded-full hover:text-blue-500 hover:border-blue-500 transition-all duration-300`}
-              onClick={handleToggle}
-            >
-              {toggleTheme ? <FiMoon /> : <LuSun />}
-            </button>
+          <button
+            className={`border-[1px] ${
+              toggleTheme ? "border-gray-600" : ""
+            } p-2 rounded-full hover:text-blue-500 hover:border-blue-500 transition-all duration-300`}
+            onClick={handleToggle}
+          >
+            {toggleTheme ? <FiMoon /> : <LuSun />}
+          </button>
           {/* </Tooltip> */}
           <Box sx={{ height: 37, transform: "translateZ(0px)", flexGrow: 1 }}>
             <SpeedDial
